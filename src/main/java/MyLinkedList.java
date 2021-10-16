@@ -91,4 +91,13 @@ public class MyLinkedList {
         System.out.println("After inserting a new node with key value " + key + " at position " + position + " : ");
     }
 
+    public void remove(int position) {
+        MyNode tempNode = (MyNode) head;
+        MyNode currentNode = (MyNode) head;
+        for (int i = 0; i < position; i++) {
+            tempNode = currentNode;
+            currentNode = (MyNode) currentNode.next;
+        }
+        tempNode.next = currentNode.next;
+    }
 }
