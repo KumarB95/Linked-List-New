@@ -80,4 +80,15 @@ public class MyLinkedList {
         }
     }
 
+    public void insert(int key, int position) {
+        MyNode newNode = new MyNode(key);
+        MyNode nodeAtPreviousIndex = (MyNode) head;
+        for (int i = 0; i < position - 1; i++) {
+            nodeAtPreviousIndex = (MyNode) nodeAtPreviousIndex.next;
+        }
+        newNode.next = nodeAtPreviousIndex.next;
+        nodeAtPreviousIndex.next = newNode;
+        System.out.println("After inserting a new node with key value " + key + " at position " + position + " : ");
+    }
+
 }
